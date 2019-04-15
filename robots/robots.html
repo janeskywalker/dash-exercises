@@ -10,10 +10,14 @@
   }
   
   
+
   .brain {
+    background: radial-gradient(circle, white 15%, transparent 40%), #cc5;
+    background: -webkit-radial-gradient(circle, white 15%, transparent 40%), #cc5;
+    background: -moz-radial-gradient(circle, white 15%, transparent 40%), #cc5;
+    background-size: 75px 150px;
     height: 150px;
     width: 150px;
-    background: #cc5;
     border-radius: 60px 60px 10px 10px;
     border-bottom: 40px solid #666;
   }
@@ -61,7 +65,7 @@
 </head>
 
 <body>
-
+  <div class="beep"></div>
   <div class="brain"></div>
   <div class="torso"></div>
   <div class="foot"></div>
