@@ -2,18 +2,20 @@
 
 <head>
 
-<link href="https://fonts.googleapis.com/css?family=Poller+One" rel="stylesheet">
+<script src="/assets/jquery.js"></script>
+
+<link href='https://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
 
 <style>
 
 .robot {
   position: relative;
-  left: 150px;
+  left: 200px;
 }
 
-.beep{
+.beep {
   width: 5px;
-  height: 0px;
+  height: 0;
   border: 5px solid transparent;
   border-top: 10px solid #777;
   border-bottom: 80px solid #888;
@@ -21,46 +23,33 @@
   left: 140px;
 }
 
-
-
-
-
-
 @keyframes blink {
-    50% {
-      background: radial-gradient(circle, red 15%, transparent 40%), #cc5;
-      background-size: 75px 150px;
-    }
+  50% {
+    background: radial-gradient(circle, red 15%, transparent 40%), #cc5;
+  }
 }
-
-
-
 @-webkit-keyframes blink {
-    50% {
-      background: -webkit-radial-gradient(circle, red 15%, transparent 40%), #cc5;
-      
-      background-size: 75px 150px;
-    }
+  50% {
+    background: -webkit-radial-gradient(circle, red 15%, transparent 40%), #cc5;
+  }
+}
+@-moz-keyframes blink {
+  50% {
+    background: -moz-radial-gradient(circle, red 15%, transparent 40%), #cc5;
+  }
 }
 
-
-@-moz-keyframes blink {
-    50% {
-      background: -moz-radial-gradient(circle, red 15%, transparent 40%), #cc5;
-      background-size: 75px 150px;
-    }
+.laser {
+  animation: blink .5s infinite;
+  -webkit-animation: blink .5s infinite;
+  -moz-animation: blink .5s infinite;
 }
 
 
 .brain {
-  animation: blink .5s infinite;
-  -webkit-animation: blink .5s infinite;
-  -moz-animation: blink .5s infinite;
   background: radial-gradient(circle, white 15%, transparent 40%), #cc5;
-  background: -moz-radial-gradient(circle, white 15%, transparent 40%), #cc5;
+  background: -moz-radial-gradient(circle, white 15%, transparent 40%), #cc5; 
   background: -webkit-radial-gradient(circle, white 15%, transparent 40%), #cc5;
-  
-  background: -webkit-radial-gradient(circle, rgba(255, 255, 255, 1.0) 15%, rgba(255, 255, 255, 0.0) 40%), #cc5;
   background-size: 75px 150px;
   height: 150px;
   width: 150px;
@@ -69,13 +58,6 @@
   position: relative;
   left: 70px;
 }
-
-
-
-
-
-
-
 .torso {
   height: 0;
   width: 140px;
@@ -84,7 +66,6 @@
   border-right: 75px solid transparent;
   border-radius: 20px 20px 100px 100px;
 }
-
 .left {
   font-family: 'Poller One', verdana, arial, sans-serif;
   font-weight: bold;
@@ -94,16 +75,15 @@
   -webkit-transform: rotate(200deg);
   -moz-transform: rotate(200deg);
   position: relative;
-  left: -190px;
   top: -320px;
+  left: -190px;
   z-index: -1;
 }
-
 .right {
-  color: #666;
   font-family: 'Poller One', verdana, arial, sans-serif;
   font-weight: bold;
   font-size: 250px;
+  color: #666;
   transform: scaleY(-1) rotate(20deg);
   -webkit-transform: scaleY(-1) rotate(20deg);
   -moz-transform: scaleY(-1) rotate(20deg);
@@ -112,7 +92,6 @@
   left: 190px;
   z-index: -1;
 }
-
 .foot {
   height: 40px;
   width: 40px;
@@ -120,8 +99,8 @@
   border-radius: 40px;
   border: 15px solid #999;
   position: relative;
-  top: -10px;
   left: 110px;
+  top: -10px;
   z-index: -1;
 }
 </style>
@@ -136,9 +115,16 @@
     <div class="left">j</div>
     <div class="right">j</div>
   </div>
-  
   <div class="foot"></div>
 </div>
 
+<button class="flash">laser eyes on/off </button>
+
+<script> 
+  // when eyes button is clicked, toggle laser class
+  $('.flash').click(function() {
+    $('.brain').toggleClass('laser');
+  });
+</script>
 
 </body>
