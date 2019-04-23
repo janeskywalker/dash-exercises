@@ -145,6 +145,7 @@ img {
 
 <button class="flash">laser eyes on/off</button>
 <button class="color">change color!</button>
+<button class="moves">dance!</button>
 
 <img src="/assets/dance_cotter.gif">
 
@@ -169,6 +170,10 @@ $(".color").click(function() {
   
   //Display the RGBA value in an alert window
   //alert(randomRGBA);
+});
+
+$(".moves").click(function() {
+  $("img").toggle();
 });
 
 </script>
