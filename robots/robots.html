@@ -97,6 +97,37 @@
   top: -10px;
   z-index: -1;
 }
+
+
+
+@keyframes dance {
+  from {
+    left: 800px;
+  }
+}
+
+@-webkit-keyframes dance {
+  from {
+    left: 800px;
+  }
+}
+
+@-moz-keyframes dance {
+  from {
+    left: 800px;
+  }
+}
+
+img {
+  animation: dance 4s infinite;
+  -webkit-animation: dance 4s infinite;
+  -moz-animation: dance 4s infinite;
+  position: absolute;
+  top: 200px;
+  left: 400px;
+}
+
+
 </style>
 </head>
 
@@ -114,6 +145,9 @@
 
 <button class="flash">laser eyes on/off</button>
 <button class="color">change color!</button>
+
+<img src="/assets/dance_cotter.gif">
+
 <script>
 // When eyes button is clicked, toggle laser class on brain
 $(".flash").click(function() {
@@ -136,5 +170,6 @@ $(".color").click(function() {
   //Display the RGBA value in an alert window
   //alert(randomRGBA);
 });
+
 </script>
 </body>
