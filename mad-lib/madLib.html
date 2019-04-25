@@ -7,6 +7,9 @@
 </head>
 
 <body>
+
+<div class="prompt"></div>
+
 <script>
 
   var prompts = [
@@ -16,6 +19,9 @@
   ];
   
   //alert(prompts.length);
-  alert(prompts[0]);
+  //alert(prompts[0]);
+  
+  //put first prompt in all html elements with a class named prompt
+  $('.prompt').html(prompts[2]);
 </script>
 </body>
