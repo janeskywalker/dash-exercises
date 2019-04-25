@@ -9,19 +9,38 @@
 <body>
 
 <div class="prompt"></div>
+<button>Next</button>
 
 <script>
+var prompts= [
+	'type your name',
+	'type an adjective',
+	'type a noun'
+];
 
-  var prompts = [
-    'Type your name',
-    'Type an adjective',
-    'Type a noun'
-  ];
+//keep track of curent prompt we are on 
+var currentPrompt = 0;
+
+//a function that will call the next prompt
+var nextPrompt = function() {
   
-  //alert(prompts.length);
-  //alert(prompts[0]);
+  // put first prompt in all html elements with class prompt
+  //find a class named prompt, put the zer0-position of array prompts inside it
+  $('.prompt').html(prompts[currentPrompt]);
   
-  //put first prompt in all html elements with a class named prompt
-  $('.prompt').html(prompts[2]);
+  //move the next prompt into vriable currentPrompt
+  currentPrompt = currentPrompt + 1;  
+
+}
+
+//run nextPrompt funtion when button is clicked
+$('button').click(function() {
+  nextPrompt();
+});
+
+
 </script>
+
 </body>
+
+
